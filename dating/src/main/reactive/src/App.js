@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Chat from './pages/Chat';
 import Rank from './pages/Rank';
 import MyPage from './pages/MyPage';
+import image from './functionCode/image'
 
 function App() {
    const [hello, setHello] = useState('')
