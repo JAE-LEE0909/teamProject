@@ -6,8 +6,10 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
 import Chat from './pages/Chat';
 import Rank from './pages/Rank';
-import MyPage from './pages/MyPage';
+import MyPage from './pages/myPage/MyPage';
 import image from './functionCode/image'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
    const [hello, setHello] = useState('')

@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 왼쪽 좁게, 오른쪽 넓게 */
+  grid-template-rows: auto auto auto;
+  gap: 8px; /*div 간의 간격*/
+  grid-template-areas: /*div 구조*/
+    "profile intro"
+    "upload  upload"
+    "buttons buttons";
+}
+
+/* 이름에 공백 절대 X, 한 단어로! */
+.profile  { grid-area: profile;  border: 1px solid #000; min-height: 150px; }
+.intro    { grid-area: intro;    border: 1px solid #000; min-height: 150px; }
+.upload   { grid-area: upload;   border: 1px solid #000; min-height: 150px; }
+.buttons  { grid-area: buttons;  border: 1px solid #000; min-height: 150px; }
