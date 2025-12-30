@@ -10,6 +10,7 @@ function MyPage(){
             <div>
                 <h1>마이 페이지 입니다.</h1>
                 으아아아 모르겠다..ㅠㅠ
+                 ㄴ 점심메뉴 추천 좀 해주십쇼 - 2025.12.30 
                 <image />
             </div>
 
@@ -20,7 +21,7 @@ function MyPage(){
                 <div className="profile">프로필 사진
                     <Container>
                         <Col xs={6} md={4}>
-                            <Image src="http://localhost:3000/img/baisc_user_image.png" rounded />
+                            <Image src="http://localhost:3000/img/new_meet_mobile_logo.png" rounded />
                         </Col>
                     </Container>
                 </div>

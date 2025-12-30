@@ -6,11 +6,11 @@
   grid-template-areas: /*div 구조*/
     "profile intro"
     "upload  upload"
-    "buttons buttons";
+    "setting setting";
 }
 
 /* 이름에 공백 절대 X, 한 단어로! */
 .profile  { grid-area: profile;  border: 1px solid #000; min-height: 150px; }
 .intro    { grid-area: intro;    border: 1px solid #000; min-height: 150px; }
 .upload   { grid-area: upload;   border: 1px solid #000; min-height: 150px; }
-.buttons  { grid-area: buttons;  border: 1px solid #000; min-height: 150px; }
+.setting  { grid-area: setting;  border: 1px solid #000; min-height: 150px; }
