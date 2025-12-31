@@ -1,14 +1,14 @@
 /* App.css */
-.app {
+.main {
   padding-top: 100px; /* Header 와 본문 사이 패딩(간격) */
-  padding-bottom: 40px; /* Footer 와 본문 사이 패딩(간격) */
+  padding-bottom: 1px; /* Footer 와 본문 사이 패딩(간격) */
 
   max-width: 1200px;          /* 중앙 영역 최대 너비 */
   margin: 0 auto;             /* 좌우 가운데 정렬 */
 
+  min-height: 100vh;        /* 화면 높이 = 100% */
+  display: flex;
+  flex-direction: column;
 
-}
 
-.content {
-  padding: 20px;
 }

@@ -23,10 +23,13 @@ function App() {
     }, []);
 
     return (
-      <div className="app">
-        
+      <>
         {/*커스텀 Header*/}
         <Header />
+
+        {/*중앙 - 페이지가 나타나는 자리*/}
+        <main className='main'>
+
         <div>
           백엔드에서 가져온 데이터입니다 : {hello}
         </div>
@@ -49,18 +52,22 @@ function App() {
           </ul>
           </nav>
 
-        {/*페이지 Component를 불러와 표시*/}
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/rank" element={<Rank />} />
-          <Route path="/mypage" element={<MyPage />} />
-        </Routes>
+          {/*페이지 Component를 불러와 표시*/}
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/rank" element={<Rank />} />
+            <Route path="/mypage" element={<MyPage />} />
+          </Routes>
+        </main>
+
+
+        {/*중앙 - 페이지가 나타나는 자리*/}
         
         {/*커스텀 Footer*/}
         <Footer />
 
-      </div>
+      </>
     );
 }
 
