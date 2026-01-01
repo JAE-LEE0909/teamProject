@@ -12,3 +12,40 @@
 
 
 }
+
+/* 하단 버튼 */
+.buttom-nav{
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);   /* 메뉴바 가운데 정렬 */
+  width: 100%;
+  max-width: 1120px;              /* 중앙 레이아웃 유지 */
+  padding: 8px 16px;
+  background: #0b1020;            /* 배경색 (투명 방지) */
+  border-top: 1px solid rgba(255,255,255,.15);
+  z-index: 1000;                  /* footer 위에 표시되도록 */
+}
+
+.buttom-nav-icons{
+  display: flex;
+  gap: 80px;                  /* 아이콘 간 간격 */
+  margin-top: 4px;
+    margin: 0 auto;             /* 좌우 가운데 정렬 */
+}
+
+.buttom-nav-icons a {       /* Link는 a태그로 구별됨 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  color: #487199;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.buttom-nav-icons a:hover {
+  background: rgba(255,255,255,.15);
+}
