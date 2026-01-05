@@ -10,42 +10,122 @@
   display: flex;
   flex-direction: column;
 
-
 }
 
-/* 하단 버튼 */
-.buttom-nav{
+/* 메뉴바 전체 */
+.buttom-nav-wrapper {
   position: fixed;
   left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);   /* 메뉴바 가운데 정렬 */
-  width: 100%;
-  max-width: 1120px;              /* 중앙 레이아웃 유지 */
-  padding: 8px 16px;
-  background: #0b1020;            /* 배경색 (투명 방지) */
-  border-top: 1px solid rgba(255,255,255,.15);
-  z-index: 1000;                  /* footer 위에 표시되도록 */
-}
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 50;
 
-.buttom-nav-icons{
   display: flex;
-  gap: 80px;                  /* 아이콘 간 간격 */
-  margin-top: 4px;
-    margin: 0 auto;             /* 좌우 가운데 정렬 */
+  flex-direction: column;
+  align-items: center;
 }
 
-.buttom-nav-icons a {       /* Link는 a태그로 구별됨 */
+/* 토글 버튼 */
+.button-nav-toggle-btn {
+  margin-bottom: 6px;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+
+  background: #fdfaff;
+  color: #26488b;
+
+  cursor: pointer;
+  font-size: 12px;
+
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.button-nav-toggle-btn:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+/* 기본 상태 : 보임 */
+.buttom-nav {
+  background: #ededed;
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 0 18px 45px rgba(15,23,42,.55);
+
+  transition: opacity .2s ease, transform .2s ease, height .2s ease;
+}
+
+/* 닫힌 상태 */
+.buttom-nav.hidden {
+  opacity: 0;
+  transform: translateY(12px) scale(.96);
+  pointer-events: none;
+}
+
+
+/* 내부 아이콘 정렬 */
+.buttom-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* 공통 아이콘 버튼 */
+.buttom-nav-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+
+  width: 60px;
+  height: 60px;
+
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.25);
-  color: #487199;
+  color: #ff5959;
   text-decoration: none;
-  transition: 0.2s;
+
+  transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
 }
+
+/* 아이콘 hover 효과 */
 .buttom-nav-icons a:hover {
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* 선택된 메뉴 active 스타일 (원하면 클래스 따로 추가해서 사용) */
+.buttom-nav-icons a.active {
+  background: #8b5cf6;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(129, 140, 248, 0.6);
+}
+
+/* SVG 색상 통일 */
+.buttom-nav-icons svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+/* 모바일일 때 조금 압축 */
+@media (max-width: 640px) {
+  .buttom-nav {
+    bottom: 16px;
+    padding: 8px 14px;
+  }
+
+  .buttom-nav-icons {
+    gap: 12px;
+  }
+
+  .buttom-nav-icons a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .buttom-nav-icons svg {
+    width: 22px;
+    height: 22px;
+  }
 }
