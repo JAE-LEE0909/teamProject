@@ -7,30 +7,9 @@ import './css/myPage.css';
 
 const TABS = ["포스팅", "자기소개", "관심사"];
 
-const galleryData = {
-  포스팅: [
-    "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg",
-    "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
-    "https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg",
-    "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg",
-  ],
-  자기소개: [
-    "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-    "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
-    "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg",
-  ],
-  관심사: [
-    "https://images.pexels.com/photos/196666/pexels-photo-196666.jpeg",
-    "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-  ],
-};
-
-
 function MyPage(){
 
     const [activeTab, setActiveTab] = useState("포스팅");
-
-    const images = galleryData[activeTab] || [];
 
     return (
         <>
@@ -54,7 +33,6 @@ function MyPage(){
                 <div className="profile-main-info">
                 <h2 className="profile-name">김지현</h2>
                 <div className="profile-location">
-                    <span className="location-icon">📍</span>
                     <span>방배동, 서울</span>
                 </div>
                 </div>
@@ -93,28 +71,23 @@ function MyPage(){
                 {/* 탭 밑 구분선 */}
                 <div className="tabs-divider" />
 
-                {/* 갤러리 그리드 */}
-                <div className="gallery-grid">
-                {images.map((src, idx) => (
-                    <div key={idx} className="gallery-item">
-                    <img src={src} alt={`${activeTab} ${idx}`} />
-                    </div>
-                ))}
+            </div>
+
+            {/* 설정 버튼 모음 */}
+            <div className="settings-card">
+                <h3 className="settings-title">설정 & 고객센터</h3>
+                <div className="settings-actions">
+                <button className="btn-primary">개인정보 수정</button>
+                <button className="btn-primary">공지사항</button>
+                <button className="btn-primary">문의사항</button>
+                <button className="btn-primary">개인정보 정책</button>
                 </div>
             </div>
-        </div>
 
-        <div className='setting-btn-wrap'>
-                <div className='setting-btn'>
-                    {/* 버튼 2개 */}
-                    <div className="profile-actions">
-                    <button className="btn-primary">개인정보 수정</button>
-                    <button className="btn-outline">공지사항</button>
-                    <button className="btn-outline">문의사항</button>
-                    <button className="btn-outline">개인정보 정책</button>    
-                    </div>
-                </div>
         </div>
+        
+
+
         </>
 
     )
