@@ -1,12 +1,67 @@
 // src/pages/interestPage/InterestPage.js
 // 용도 : 조건 검색
 
-function InterestPage(){
+import { useState } from 'react';
+import RangeSlider from './components/RangeSlider';
+import './css/interestPage.css';
+
+function InterestPage() {
+
+    const [age, setAge] = useState([25, 34]); // 나이 저장 변수
+    const [height, setHeight] = useState([168, 201]); // 키 저장 변수
+    const [distance, setDistance] = useState([1, 20]); // 거리 저장 변수
+
 
     return (
-        <div>
-            <h1>조건 검색 페이지 입니다.</h1>
+        <>
+        {/* 전체 틀 */}
+        <div className="interest-card-wrap">
+            {/* 조건 1 - 나이 */}
+            <div className="interest-condition-age">
+                <RangeSlider
+                    label="나이"
+                    min={18}
+                    max={60}
+                    step={1}
+                    value={age}
+                    onChange={setAge}
+                />
+            </div>
+
+            {/* 조건 2 - 키 */}
+            <div className="interest-condition-height">
+                <RangeSlider
+                    label="키"
+                    min={140}
+                    max={210}
+                    step={1}
+                    unit="cm"
+                    value={height}
+                    onChange={setHeight}
+                />
+            </div>
+
+            {/* 조건 3 - 거리 */}
+            <div className="interest-condition-distance">
+                <RangeSlider
+                    label="거리"
+                    min={1}
+                    max={30}
+                    step={1}
+                    unit="km"
+                    value={distance}
+                    onChange={setDistance}
+                />
+            </div>
+            
+            {/* 조건 4 - 관심사 */}
+            <div className="interest-condition-hobby">
+                관심사
+            </div>
         </div>
+
+        </>
+
     )
 
 }

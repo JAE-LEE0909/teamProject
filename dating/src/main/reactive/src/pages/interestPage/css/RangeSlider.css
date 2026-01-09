@@ -1,0 +1,94 @@
+.rs {
+  width: 100%;
+  max-width: 420px;
+}
+
+.rsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.rsLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rsValue {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* 트랙 영역 */
+.rsTrackWrap {
+  position: relative;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* 전체 트랙(회색) */
+.rsTrack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-radius: 999px;
+  background: #d9d9d9;
+}
+
+/* 선택된 구간(진한색) */
+.rsRange {
+  position: absolute;
+  height: 6px;
+  border-radius: 999px;
+  background: #2f2abf; /* 진한 보라 느낌 */
+}
+
+/* range input 2개를 겹치기 위한 설정 */
+.rsInput {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  background: none;
+  pointer-events: none; /* 기본은 클릭 못 하게 */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* thumb만 조작 가능하게 */
+.rsInput::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 3px solid #2f2abf;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.rsInput::-moz-range-thumb {
+  pointer-events: auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 3px solid #2f2abf;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Firefox 트랙 투명 */
+.rsInput::-webkit-slider-runnable-track {
+  height: 6px;
+  background: transparent;
+}
+.rsInput::-moz-range-track {
+  height: 6px;
+  background: transparent;
+}

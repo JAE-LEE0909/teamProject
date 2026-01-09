@@ -1,0 +1,7 @@
+// jsconfig.json
+// 절대 경로 설정 (가독성을 위해 설정함. 추후 변경될 수 있음)
+{
+    "compilerOptions": {
+        "baseUrl": "src"
+    }
+}

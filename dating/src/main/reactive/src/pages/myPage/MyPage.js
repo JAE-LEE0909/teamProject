@@ -14,27 +14,29 @@ function MyPage(){
     return (
         <>
         <div className="profile-card-wrap">
+            {/* 상단 박스 */}
             <div className="profile-card">
-                {/* 상단 헤더 + 프로필 */}
+                {/* 상단 헤더 */}
                 <div className="profile-header">
-                <div className="header-bg" />
+                    {/* 상단 배경화면 */}
+                    <div className="header-bg" />
 
-                {/* 프로필 이미지 */}
-                <div className="profile-image-wrap">
-                    <img
-                    className="profile-image"
-                    src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/09/03/458cdc31-1445-41e8-ac54-bacf8dd5b4f1.jpg"
-                    alt="avatar"
-                    />
-                </div>
+                    {/* 프로필 이미지 */}
+                    <div className="profile-image-wrap">
+                        <img
+                        className="profile-image"
+                        src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/09/03/458cdc31-1445-41e8-ac54-bacf8dd5b4f1.jpg"
+                        alt="avatar"
+                        />
+                    </div>
                 </div>
 
                 {/* 이름 / 위치 */}
                 <div className="profile-main-info">
-                <h2 className="profile-name">김지현</h2>
-                <div className="profile-location">
-                    <span>방배동, 서울</span>
-                </div>
+                    <h2 className="profile-name">김지현</h2>
+                    <div className="profile-location">
+                        <span>방배동, 서울</span>
+                    </div>
                 </div>
 
                 {/* 통계 영역 */}
@@ -72,7 +74,9 @@ function MyPage(){
                 <div className="tabs-divider" />
 
             </div>
+            {/* 상단 박스 */}
 
+            {/* 하단 박스 */}
             {/* 설정 버튼 모음 */}
             <div className="settings-card">
                 <h3 className="settings-title">설정 & 고객센터</h3>
@@ -83,6 +87,7 @@ function MyPage(){
                 <button className="btn-primary">개인정보 정책</button>
                 </div>
             </div>
+            {/* 하단 박스 */}
 
         </div>
         
