@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 
-//import "pages/interestPage/css/RangeSlider.css";
+import '../css/RangeSlider.css';
+ 
+// useMemo 와 hook에 대해 알아보시오.
 
 export default function RangeSlider({
     // Props 
@@ -39,54 +41,55 @@ export default function RangeSlider({
     };
 
     return (
-    <div className="rs">
-        {(label || unit) && (
-        <div className="rsHeader">
-            {label && <div className="rsLabel">{label}</div>}
-            <div className="rsValue">
-            {minValue}~{maxValue}
-            {unit || ""}
+            
+        <div className="rs">
+            {(label || unit) && (
+                <div className="rsHeader">
+                    {label && <div className="rsLabel">{label}</div>}
+                    <div className="rsValue">
+                        {minValue}~{maxValue}
+                        {unit || ""}
+                    </div>
+                </div>
+            )}
+
+            <div className="rsTrackWrap">
+            {/* 전체 트랙 */}
+            <div className="rsTrack" />
+
+            {/* 선택된 범위 */}
+            <div
+                className="rsRange"
+                style={{
+                    left: `${minPercent}%`,
+                    width: `${maxPercent - minPercent}%`,
+                }}
+            />
+
+            {/* 왼쪽 슬라이더 */}
+            <input
+                type="range"
+                min={min}
+                max={max}
+                step={step}
+                value={minValue}
+                onChange={handleMinChange}
+                className="rsInput"
+                style={{ zIndex: 3 }}
+            />
+
+            {/* 오른쪽 슬라이더 */}
+            <input
+                type="range"
+                min={min}
+                max={max}
+                step={step}
+                value={maxValue}
+                onChange={handleMaxChange}
+                className="rsInput"
+                style={{ zIndex: 4 }}
+            />
             </div>
         </div>
-        )}
-
-        <div className="rsTrackWrap">
-        {/* 전체 트랙 */}
-        <div className="rsTrack" />
-
-        {/* 선택된 범위 */}
-        <div
-            className="rsRange"
-            style={{
-            left: `${minPercent}%`,
-            width: `${maxPercent - minPercent}%`,
-            }}
-        />
-
-        {/* 왼쪽 슬라이더 */}
-        <input
-            type="range"
-            min={min}
-            max={max}
-            step={step}
-            value={minValue}
-            onChange={handleMinChange}
-            className="rsInput"
-            style={{ zIndex: 3 }}
-        />
-
-        {/* 오른쪽 슬라이더 */}
-        <input
-            type="range"
-            min={min}
-            max={max}
-            step={step}
-            value={maxValue}
-            onChange={handleMaxChange}
-            className="rsInput"
-            style={{ zIndex: 4 }}
-        />
-        </div>
-    </div>
     );
 }

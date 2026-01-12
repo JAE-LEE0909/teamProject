@@ -9,6 +9,8 @@
   gap: 16px; /*interest-card-wrap 안에 div 사이 간격*/
   padding: 24px 12px; /*상단 하단*/
   box-sizing: border-box;
+
+  
 }
 
 /* 조건 - 나이 */
@@ -16,6 +18,12 @@
   width: 600px;
   max-width: 100%;
   background: #ececec;
+
+  display: flex;
+  justify-content: center;   /* 가로 중앙 */
+  align-items: center;       /* 세로 중앙 (필요하면) */
+  margin-bottom: 24px;
+
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
@@ -26,6 +34,12 @@
   width: 600px;
   max-width: 100%;
   background: #ececec;
+
+  display: flex;
+  justify-content: center;   /* 가로 중앙 */
+  align-items: center;       /* 세로 중앙 (필요하면) */
+  margin-bottom: 24px;
+
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
@@ -36,6 +50,12 @@
   width: 600px;
   max-width: 100%;
   background: #ececec;
+
+  display: flex;
+  justify-content: center;   /* 가로 중앙 */
+  align-items: center;       /* 세로 중앙 (필요하면) */
+  margin-bottom: 24px;
+
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
@@ -46,6 +66,12 @@
   width: 600px;
   max-width: 100%;
   background: #ececec;
+
+  display: flex;
+  justify-content: center;   /* 가로 중앙 */
+  align-items: center;       /* 세로 중앙 (필요하면) */
+  margin-bottom: 24px;
+
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
