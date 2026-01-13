@@ -44,14 +44,14 @@ export default function RangeSlider({
             
         <div className="rs">
             {(label || unit) && (
-                <div className="rsHeader">
-                    {label && <div className="rsLabel">{label}</div>}
-                    <div className="rsValue">
-                        {minValue}~{maxValue}
-                        {unit || ""}
-                    </div>
+            <div className="rsHeader">
+                <div className="rsLabel">{label}</div>
+                <div className="rsChip">
+                {minValue}~{maxValue}{unit || ""}
                 </div>
+            </div>
             )}
+
 
             <div className="rsTrackWrap">
             {/* 전체 트랙 */}

@@ -15,9 +15,10 @@ function InterestPage() {
     return (
         <>
         {/* 전체 틀 */}
-        <div className="interest-card-wrap">
+        <div className="settingsPage">
+            <div className="sectionTitle">원하는 이성을 찾아 보세요!</div>
             {/* 조건 1 - 나이 */}
-            <div className="interest-condition-age">
+            <div className="settingRow">
                 <RangeSlider
                     label="나이"
                     min={18}
@@ -29,7 +30,7 @@ function InterestPage() {
             </div>
 
             {/* 조건 2 - 키 */}
-            <div className="interest-condition-height">
+            <div className="settingRow">
                 <RangeSlider
                     label="키"
                     min={140}
@@ -42,7 +43,7 @@ function InterestPage() {
             </div>
 
             {/* 조건 3 - 거리 */}
-            <div className="interest-condition-distance">
+            <div className="settingRow">
                 <RangeSlider
                     label="거리"
                     min={1}
@@ -55,7 +56,8 @@ function InterestPage() {
             </div>
             
             {/* 조건 4 - 관심사 */}
-            <div className="interest-condition-hobby">
+            <div className="sectionTitle">Other</div>
+            <div className="settingRow">
                 관심사
             </div>
         </div>

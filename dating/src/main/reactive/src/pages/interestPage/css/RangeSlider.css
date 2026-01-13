@@ -1,102 +1,103 @@
 .rs {
   width: 100%;
-  max-width: 420px;
-
-  --track-h: 6px;
-  --thumb: 20px;
-
+  --track-h: 4px;
+  --thumb: 18px;
 }
 
-.rsHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
+/* 헤더: 한 줄 정렬 */
+.rsHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 10px;
 }
 
-.rsLabel {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.rsValue {
-  font-size: 22px;
+.rsLabel{
+  font-size: 13px;
   font-weight: 800;
+  color: #0f172a;
+}
+
+/* 값 칩 */
+.rsChip{
+  font-size: 13px;
+  font-weight: 800;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 77, 109, 0.12);
+  color: #ff4d6d;
+  border: 1px solid rgba(255, 77, 109, 0.18);
 }
 
 /* 트랙 영역 */
-.rsTrackWrap {
+.rsTrackWrap{
   position: relative;
-  height: 44px;
-  display: flex;
-  align-items: center;
+  height: 36px;
+  display:flex;
+  align-items:center;
 }
 
 /* 전체 트랙 */
-.rsTrack {
-  position: absolute;
-  left: 0;
-  right: 0;
+.rsTrack{
+  position:absolute;
+  left:0;
+  right:0;
   height: var(--track-h);
   border-radius: 999px;
-  background: #d7dffd;
+  background: rgba(15,23,42,0.12);
 }
 
-/* 선택된 구간(진한색) */
-.rsRange {
-  position: absolute;
+/* 선택 구간 */
+.rsRange{
+  position:absolute;
   height: var(--track-h);
   border-radius: 999px;
-  background: #2f2abf; /* 진한 보라 느낌 */
+  background: #ff4d6d; /* 포인트 컬러 */
 }
 
-/* range input 2개를 겹치기 위한 설정 */
-.rsInput {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 44px;
-  margin: 0;
-  background: none;
-  pointer-events: none; /* 기본은 클릭 못 하게 */
-  -webkit-appearance: none;
-  appearance: none;
+/* input 겹치기 */
+.rsInput{
+  position:absolute;
+  left:0;
+  width:100%;
+  height:36px;
+  margin:0;
+  background:none;
+  pointer-events:none;
+  -webkit-appearance:none;
+  appearance:none;
 }
 
-/* thumb만 조작 가능하게 */
-.rsInput::-webkit-slider-thumb {
-  pointer-events: auto;
-  -webkit-appearance: none;
-
+/* WebKit thumb */
+.rsInput::-webkit-slider-thumb{
+  pointer-events:auto;
+  -webkit-appearance:none;
   width: var(--thumb);
   height: var(--thumb);
   border-radius: 999px;
-  background: #ffffff;
-  /* border: 3px solid #2f2abf; 이것은 동그라미에 border 이다.*/
-  cursor: pointer;
-  box-shadow: 0 10px 16px rgba(0,0,0,0.12);
-
-  /* 트랙 중앙에 오도록 보정 */
+  background: #ff4d6d;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.14);
   margin-top: calc((var(--track-h) - var(--thumb)) / 2);
 }
 
-.rsInput::-moz-range-thumb {
-  pointer-events: auto;
-  width: 26px;
-  height: 26px;
+/* Firefox thumb (변수 통일) */
+.rsInput::-moz-range-thumb{
+  pointer-events:auto;
+  width: var(--thumb);
+  height: var(--thumb);
   border-radius: 999px;
-  background: #ffffff;
-  border: 3px solid #2f2abf;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  background: #ff4d6d;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.14);
 }
 
-/* Firefox 트랙 투명 */
-.rsInput::-webkit-slider-runnable-track {
-  height: 6px;
+/* 트랙 투명 */
+.rsInput::-webkit-slider-runnable-track{
+  height: var(--track-h);
   background: transparent;
 }
-.rsInput::-moz-range-track {
-  height: 6px;
+.rsInput::-moz-range-track{
+  height: var(--track-h);
   background: transparent;
 }
