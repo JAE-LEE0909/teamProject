@@ -1,7 +1,8 @@
 .rs {
   width: 100%;
-  --track-h: 4px;
-  --thumb: 18px;
+  /*input[type=range] 를 설정함.*/
+  --track-h: 4px; /*트랙의 위아래 폭*/
+  --thumb: 18px; /*동그란 손잡이 크기*/
 }
 
 /* 헤더: 한 줄 정렬 */
@@ -44,7 +45,7 @@
   right:0;
   height: var(--track-h);
   border-radius: 999px;
-  background: rgba(15,23,42,0.12);
+  background: rgba(0, 76, 255, 0.12); /* 트랙 색상 */
 }
 
 /* 선택 구간 */
@@ -55,7 +56,7 @@
   background: #ff4d6d; /* 포인트 컬러 */
 }
 
-/* input 겹치기 */
+/* 슬라이더 입력의 전체 (input)  */
 .rsInput{
   position:absolute;
   left:0;
@@ -63,14 +64,14 @@
   height:36px;
   margin:0;
   background:none;
-  pointer-events:none;
+  pointer-events:none; /* input type의 Range 로 설정된 부분 클릭 금지  */
   -webkit-appearance:none;
   appearance:none;
 }
 
-/* WebKit thumb */
+/* 슬라이더 입력의 '점' 클릭해서 잡아서 움직일 수 있는것(WebKit thumb) */
 .rsInput::-webkit-slider-thumb{
-  pointer-events:auto;
+  pointer-events:auto; /*  slider-thumb를 클릭 가능하도록 함 */
   -webkit-appearance:none;
   width: var(--thumb);
   height: var(--thumb);
@@ -81,7 +82,7 @@
   margin-top: calc((var(--track-h) - var(--thumb)) / 2);
 }
 
-/* Firefox thumb (변수 통일) */
+/* 슬라이더 입력의 '점' Firefox thumb 용 */
 .rsInput::-moz-range-thumb{
   pointer-events:auto;
   width: var(--thumb);
@@ -92,11 +93,12 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.14);
 }
 
-/* 트랙 투명 */
+/* 슬라이더 트랙 투명 */
 .rsInput::-webkit-slider-runnable-track{
   height: var(--track-h);
   background: transparent;
 }
+/* 슬라이더 트랙 *Firefox 용 */
 .rsInput::-moz-range-track{
   height: var(--track-h);
   background: transparent;
