@@ -4,6 +4,8 @@
 import { useState } from 'react';
 import RangeSlider from './components/RangeSlider';
 import './css/interestPage.css';
+// import axios from 'axios'; // axios 는 아래 import api ... 파일 참고
+import api from '../../api/api';
 
 function InterestPage() {
 
@@ -26,25 +28,33 @@ function InterestPage() {
         setLoading(true);
         setError("");
 
-        // query param을 쓰는 대신, 그냥 요청에 파라미터를 붙여 호출만 함(주소창은 안 바뀜)
-        const params = new URLSearchParams({
-            ageMin: age[0], // age 배열 1번째가 최소값
-            ageMax: age[1], // age 배열 2번째가 최대값
-            heightMin: height[0],
-            heightMax: height[1],
-            distMin: distance[0],
-            distMax: distance[1],
+        // axios는 params 옵션으로 query string을 자동 생성해줌
+        // const params = new URLSearchParams
+        const res = await api.get("/api/matches", {
+        params: {
+          ageMin: age[0],
+          ageMax: age[1],
+          heightMin: height[0],
+          heightMax: height[1],
+          distMin: distance[0],
+          distMax: distance[1],
+            },
         });
 
-        const res = await fetch(`http://localhost:8080/api/matches?${params}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        // axios는 응답 데이터가 res.data에 있음
+        setMatches(res.data);
 
-        const data = await res.json();
-        setMatches(data);
-        
+        // 화면 교체
         setView("RESULT");
         } catch (e) {
-        setError(e?.message || String(e));
+            // 에러 대응
+            const msg =
+            e?.response?.data?.message || // (나중에 표준 에러 JSON 만들면 여기로 잡힘)
+            e?.response?.statusText ||
+            e?.message ||
+            "요청 중 오류가 발생했습니다.";
+
+            setError(msg);
         } finally {
         setLoading(false);
         }
@@ -52,7 +62,6 @@ function InterestPage() {
 
     // 다시 검색 핸들러
     const handleBackToFilter = () => {
-        // 원하면 matches도 비울 수 있음: setMatches([]);
         setView("FILTER");
     };
 
