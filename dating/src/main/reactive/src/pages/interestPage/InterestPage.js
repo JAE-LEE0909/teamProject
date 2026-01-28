@@ -28,6 +28,11 @@ function InterestPage() {
         setLoading(true);
         setError("");
 
+        // TODO:
+        // 현재는 api.get을 직접 호출
+        // 추후 matchApi.js 같은 파일로 분리해서
+        // getMatches(params) 형태로 감쌀 예정
+
         // axios는 params 옵션으로 query string을 자동 생성해줌
         // const params = new URLSearchParams
         const res = await api.get("/api/matches", {
@@ -43,6 +48,8 @@ function InterestPage() {
 
         // axios는 응답 데이터가 res.data에 있음
         setMatches(res.data);
+        
+        console.log(res.data);
 
         // 화면 교체
         setView("RESULT");

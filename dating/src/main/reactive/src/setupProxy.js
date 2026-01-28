@@ -11,11 +11,21 @@ module.exports = function(app) {
       pathFilter: '/main'
     })
   );
+
   app.use(
-      createProxyMiddleware({
-        target: 'http://localhost:8080/',
-        changeOrigin: true,
-        pathFilter: '/api/hello'
-      })
-    );
+    createProxyMiddleware({
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+      pathFilter: '/api/hello'
+    })
+  );
+
+  app.use(
+    createProxyMiddleware({
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+      pathFilter: '/api/matches'
+    })
+  );
+  
 };
