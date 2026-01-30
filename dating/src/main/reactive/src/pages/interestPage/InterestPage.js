@@ -7,11 +7,12 @@ import './css/interestPage.css';
 // import axios from 'axios'; // axios 는 아래 import api ... 파일 참고
 import api from '../../api/api';
 
+
 function InterestPage() {
 
     // 조건 검색 변수
-    const [age, setAge] = useState([25, 34]); // 나이 저장 변수
-    const [height, setHeight] = useState([168, 201]); // 키 저장 변수
+    const [age, setAge] = useState([18, 30]); // 나이 저장 변수
+    const [height, setHeight] = useState([150, 201]); // 키 저장 변수
     const [distance, setDistance] = useState([1, 20]); // 거리 저장 변수
 
     // 화면 전환 상태
@@ -89,7 +90,7 @@ function InterestPage() {
             <ul>
                 {matches.map((m) => (
                 <li key={m.id}>
-                    {m.nickname} / {m.age}세 / {m.height}cm / {m.distanceKm}km
+                    {m.name} / {m.age}세 / {m.height}cm / {m.distanceKm}km
                 </li>
                 ))}
             </ul>
@@ -149,11 +150,13 @@ function InterestPage() {
             {/* 조건 4 - 관심사 */}
             <div className="sectionTitle">Other</div>
             <div className="settingRow">
-                관심사
+                관심사 - 추후 필요한 것 추가 예정
             </div>
 
             {/* 검색 버튼 */}
-            <button onClick={handleSearch} disabled={loading}>
+            <button className="btn search-cta-outline w-100" type="button"
+                disabled={loading}
+                onClick={handleSearch}>
                 {loading ? "검색 중..." : "검색"}
             </button>
 
